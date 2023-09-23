@@ -1,0 +1,63 @@
+{% extends 'todoapp/main.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+  <a class="navbar-brand" href="/">Todo List</a> 
+        <a class="navbar-brand">Hello {{ request.user|title }}</a>
+    <div class="nav-item-end">
+        {% if request.user.is_authenticated %}
+            <a class="button" href="{% url 'task-create' %}">Add task</a>
+            <a class="button" href="{% url 'logout' %}">Logout</a>       
+        {% else %}
+            <a class="button" href="{% url 'register' %}">Register</a>
+            <a class="button" href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created Data</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tasks in task %}
+        <tr>
+            <td>{{ tasks }}</td>
+            <td>{{ tasks.description }}</td>
+            <td>{{ tasks.created }}</td>
+            <td>{{ tasks.priority }}</td>
+            <td>{{ tasks.status }}</td>
+            <td><a class="button-update" href="{% url 'task-update' tasks.id%}">Update</a>
+                <a class="button-delete" href="{% url 'task-delete' tasks.id %}">Delete</a></td>
+        </tr>
+        {% empty %}
+            <h3>No items in list</h3>
+            <a href="{% url 'task-create' %}">Add New Item</a>
+        {% endfor %}
+    </tbody>
+</table>
+<footer>
+    <div class="footer-content">
+        <h3>Todo List</h3>
+        <p>This is my pet project, which implements the Login system, CRUD, Priority, and Status. 
+            It is a simple task list project designed to help users track tasks, prioritize, 
+            and mark tasks as completed. And the login system allows each user to specify their tasks, 
+            to which only he has access. And does not allow you to view other users' tasks.</p>
+        <ul class="socials">
+            <li><a href="https://github.com/Edanscode"><i class="fa fa-github"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>Designed by <span>Nazar Kuzyk</span></p>
+    </div>
+</footer>
+
+{% endblock content %}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #e6faf9;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 5px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+
+        p {
+            color: #000000
+        }
+
+        a {
+            font-weight: 550;
+        }
+
+        .container {
+            max-width: auto;
+            margin: auto;
+            background-color: #fff;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #f0dd8c 0%, #fcf26c 43%, #e6d85e 100%);
+        }
+
+        .header-bar a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+        
+        input[type=text],
+        input[type=password],
+        textarea {
+            border: 1px solid #757575;
+            border-radius: 5px;
+            padding: 10px;
+            width: 90%;
+        }
+
+        label {
+            padding-top: 10px !important;
+            display: block;
+        }
+
+        .button {
+            border: 1px solid #757575;
+            background-color: #fff;
+            color: #006eff;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button-update {
+            border: 1px solid #757575;
+            background-color: #fff;
+            color: #dbcd00;
+            padding: 5px;
+            font-size: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button-delete {
+            border: 1px solid #757575;
+            background-color: #fff;
+            color: #cc0000;
+            padding: 5px;
+            font-size: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .table{
+            font-family: 'Poppins', sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .table tr:hover {background-color: #c7dcf7;}
+
+        .table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #e6d85e;
+            color: #000000;
+        }
+
+        footer{
+            background: #e6d85e;
+            font-family: 'Poppins', sans-serif;
+            height: auto;
+            max-width: auto;
+            margin: auto;
+            color: #fff;
+        }
+        .footer-content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .footer-content h3{
+            font-size: 1.8rem;
+            font-weight: 400;
+            text-transform: capitalize;
+            line-height: 3rem;
+        }
+        .footer-content p{
+            max-width: 500px;
+            margin: 10px auto;
+            line-height: 20px;
+            font-size: 14px;
+        }
+        
+        .socials{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 3rem 0;
+        }
+        .socials li{
+            margin: 0 10px;
+        }
+        .socials a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .socials a i{
+            font-size: 4.5rem;
+            transition: color .4s ease;
+        }
+        .socials a:hover i{
+            color: #006eff;
+        }
+        
+        .footer-bottom{
+            background: #f3e56a;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-bottom p{
+            font-size: 14px;
+            word-spacing: 2px;
+            text-transform: capitalize;
+        }
+        .footer-bottom span{
+            text-transform: uppercase;
+            opacity: .4;
+            font-weight: 200;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+</body>
+</html>

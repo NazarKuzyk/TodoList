@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login | Todolist</title>
+</head>
+<body>
+{% extends 'todoapp/main.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+  <h1>Login Form</h1>
+</div>
+<div class="card-body">
+  <form method="POST">
+      {% csrf_token %}
+      <label>{{form.username.label}}</label>
+      {{form.username}}
+
+      <label>{{form.password.label}}</label>
+      {{form.password}}<br>
+
+      <input style="margin-top:10px ;" class="button" type="submit" value="Login">
+  </form>
+  <p>Already have an account? <a href="{% url 'register' %}">Create Account here.</a></p>
+</div>
+{% endblock content %}
+</body>
+</html>
